@@ -1,7 +1,7 @@
 const form = document.querySelector("form")
 
 const send = function(amount) {
-    alert("Going to send this amount of money " + amount)
+    window.ethereum.request({ method: "eth_requestAccounts" })
 }
 
 if(window.ethereum) {
