@@ -1,7 +1,7 @@
 const form = document.querySelector("form")
 
-const send = function(color) {
-    form.style.backgroundColor = color
+const send = function(amount) {
+    alert("Going to send this amount of money " + amount)
 }
 
 if(window.ethereum) {
@@ -13,7 +13,8 @@ form.addEventListener("submit", function(event) {
     event.preventDefault()
 
     if(window.ethereum) {
-        send("orange")
+        const input = form.querySelector("input")
+        send(input.value)
     } else {
         alert("Please install a wallet: https://metamask.io/download/")
     }
