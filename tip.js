@@ -1,11 +1,17 @@
 const form = document.querySelector("form")
 
-if(window.ethereum) {form.classList.add("has-eth")}
+if(window.ethereum) {
+    form.classList.add("has-eth")
+}
 
 
 form.addEventListener("submit", function(event) {
     event.preventDefault()
 
-    form.style.backgroundColor = "red"
+    if(window.ethereum) {
+        form.style.backgroundColor = "red"
+    } else {
+        alert("Please install a wallet: https://metamask.io/download/")
+    }
 
 })
